@@ -1,0 +1,35 @@
+.sidebar {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 20px; /* Ajusta el padding según tus necesidades */
+  background-color: #f8f9fa; /* Color de fondo del sidebar */
+}
+
+.menu-spacer{
+  margin-right:5px
+}
+
+.text-center{
+  text-align:center;
+}
+
+.mat-toolbar {
+  background: black;
+  color: white;
+  height: auto;
+
+  /* Establecer el fondo con un gradiente lineal */
+  background: linear-gradient(to right, #000000, #673ab7);
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+  padding: 10px;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+

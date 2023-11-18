@@ -1,0 +1,17 @@
+
+<mat-grid-list cols="2" rowHeight="2:2">
+  <app-filter-categories></app-filter-categories>
+</mat-grid-list>
+<mat-grid-list cols="4" rowHeight="2:2">
+  <mat-grid-tile *ngFor="let item of games">
+    <mat-card>
+      <mat-card-title>{{ item.name| slice:0:24 }}{{ item.name.length > 15 ? '...' : '' }}</mat-card-title>
+      <img mat-card-image [src]="item.background_image" height="250" width="250">
+      <!-- <mat-card-content>{{item.esrb_rating.name}}</mat-card-content> -->
+    </mat-card>
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+
+
