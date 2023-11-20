@@ -5,21 +5,33 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilterCategoriesComponent } from '../../components/filter-categories/filter-categories.component';
 import { GameService } from '../../services/games.service';
 import { Game } from '../../interfaces/game.interface';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-game-page',
   standalone: true,
-  imports: [CommonModule, MaterialModule, HttpClientModule, FilterCategoriesComponent],
+  providers:[GameService],
+  imports: [CommonModule, MaterialModule, FilterCategoriesComponent, HttpClientModule, RouterLink, RouterLinkActive],
   templateUrl: 'game-page.component.html'
 })
 
 export class GamePageComponent  {
-  constructor(private gamesService: GameService) {
-
+  constructor(private route: ActivatedRoute, private gamesService: GameService){
+    this.searchDetailsGame();
   }
 
-  get gameDetails(): Game[] {
+  public idGame: number = 0;
+
+  get gameDetails(): Game {
     return this.gamesService.gameDetails;
+  }
+
+  searchDetailsGame(): void{
+    this.route.params.subscribe(params => {
+      this.idGame = params['id'];
+      this.gamesService.idGame = params['id'];
+      this.gamesService.searchDetailsGame();
+    });
   }
 
 }

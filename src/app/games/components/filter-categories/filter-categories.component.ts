@@ -16,14 +16,17 @@ import { Categories } from '../../interfaces/categories.interface';
 export class FilterCategoriesComponent {
 
   constructor(private gamesService: GameService) {}
+  public genre: number = 0;
 
   get genres(): Categories[] {
     return this.gamesService.genresList;
   }
 
   getGamesByGenres(genre: number): void{
-    const genreToUse = genre ?? 0;
+    // const genreToUse = genre ?? 0;
+    // this.genre = genre;
+    this.gamesService.genre = genre;
 
-    this.gamesService.searchGames(genreToUse);
+    this.gamesService.searchGames();
   }
 }

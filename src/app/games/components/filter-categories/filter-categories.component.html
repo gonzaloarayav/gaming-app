@@ -1,7 +1,9 @@
   <!-- <mat-chip-option>Two fish</mat-chip-option>
   <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
   <mat-chip-option color="warn">Warn fish</mat-chip-option> -->
-
+<h3>Filtro:</h3>
+<div  style="text-align: center; justify-content: center;">
   <mat-chip-listbox aria-label="Genre selection" (change)="getGamesByGenres($event.value)">
     <mat-chip-option *ngFor="let item of genres" [value]="item.id">{{item.name}}</mat-chip-option>
   </mat-chip-listbox>
+</div>

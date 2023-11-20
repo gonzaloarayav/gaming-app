@@ -12,7 +12,11 @@ import { Game } from '../interfaces/game.interface';
 export class GameService {
   public gameList: Games[] = [];
   public genresList: Categories[] = [];
-  public gameDetails: Game[] = [];
+  public gameDetails!: Game;
+  public genre: number = 0;
+  public paginator: number = 1;
+  public idGame: number = 0;
+
 
   private apiKey:     string = environment.apiKey;
   private serviceUrlGames: string = 'https://api.rawg.io/api/games';
@@ -20,18 +24,18 @@ export class GameService {
   private serviceUrlDetailsGame: string = 'https://api.rawg.io/api/games/';
 
   constructor( private http:HttpClient ){
-    this.searchGames(0);
+    this.searchGames();
     this.searchGenres();
   }
 
-  searchGames(genre: number):void {
+  searchGames():void {
     let params = new HttpParams()
     .set('key', this.apiKey)
-    .set('page', '1')
+    .set('page', this.paginator)
     .set('year', '2023')
-    .set('page_size', '8');
+    .set('page_size', '20');
 
-  if (genre !== 0) params = params.set('genres', genre);
+    if (this.genre !== 0) params = params.set('genres', this.genre);
 
     this.http.get<any>(`${this.serviceUrlGames}`, {params})
       .subscribe( resp => {
@@ -52,19 +56,19 @@ export class GameService {
       })
   }
 
-  searchDetailsGame(id: number):void {
+  searchDetailsGame():void {
     const params = new HttpParams()
     .set('key', this.apiKey)
     // .set('id', id)
 
     let url = '';
-    url = this.serviceUrlDetailsGame + `${id}`;
+    url = this.serviceUrlDetailsGame + `${this.idGame}`;
 
     this.http.get<any>(`${url}`, {params})
       .subscribe( resp => {
 
+        this.gameDetails = resp
         // this.gameDetails = resp.results;
-        console.log(resp);
       })
   }
 }
