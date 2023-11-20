@@ -22,4 +22,9 @@ export class CategoriesComponent {
   get games(): Games[] {
     return this.gamesService.gameList;
   }
+
+  searchDetailsGame(idGame: number): void{
+
+    this.gamesService.searchDetailsGame(idGame);
+  }
 }

@@ -22,6 +22,8 @@ export class FilterCategoriesComponent {
   }
 
   getGamesByGenres(genre: number): void{
-    this.gamesService.searchGames(genre);
+    const genreToUse = genre ?? 0;
+
+    this.gamesService.searchGames(genreToUse);
   }
 }
