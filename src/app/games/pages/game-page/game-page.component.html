@@ -1,5 +1,27 @@
+<!-- juego-detalle.component.html -->
 
-  <h1>{{ gameDetails.name }}</h1>
-  <img src="{{gameDetails.background_image}}" height="auto" width="700" class="mb-4">
-  <p>{{ gameDetails.description_raw  }}</p>
-<!-- {{idGame}} -->
+<div class="container mt-4">
+  <h1 >{{ gameDetails.name }}</h1>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="img-container">
+        <img [src]="gameDetails.background_image" class="img-fluid rounded" alt="Imagen 1">
+      </div>
+    </div>
+    <div class="col-md-6">
+
+      <div class="img-container">
+        <img [src]="gameDetails.background_image_additional" class="img-fluid rounded" alt="Imagen 2">
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <p>{{ gameDetails.description_raw }}</p>
+      <p *ngFor="let item of gameDetails.developers">{{item.name}}</p>
+      <a [href]="gameDetails.website" target="_blank">{{ gameDetails.website}}</a>
+    </div>
+  </div>
+</div>

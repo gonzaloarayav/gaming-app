@@ -1,6 +1,8 @@
 
-<shared-sidebar></shared-sidebar>
 
-<div style="margin-top: 84px; " >
-  <router-outlet></router-outlet>
+<div style="display: flex; flex-direction: column; min-height: 100vh;">
+  <shared-sidebar></shared-sidebar>
+  <div style="flex: 1; margin-top: 65px;">
+    <router-outlet></router-outlet>
+  </div>
 </div>

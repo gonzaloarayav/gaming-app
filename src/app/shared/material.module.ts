@@ -33,7 +33,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatGridListModule,
     MatCardModule,
     MatChipsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
 
   ]
 })

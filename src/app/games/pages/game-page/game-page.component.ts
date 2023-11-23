@@ -12,13 +12,16 @@ import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   providers:[GameService],
   imports: [CommonModule, MaterialModule, FilterCategoriesComponent, HttpClientModule, RouterLink, RouterLinkActive],
-  templateUrl: 'game-page.component.html'
+  templateUrl: 'game-page.component.html',
+  styleUrl: 'game-page.component.css'
 })
 
 export class GamePageComponent  {
   constructor(private route: ActivatedRoute, private gamesService: GameService){
     this.searchDetailsGame();
   }
+
+  imgLoader: boolean = false;
 
   public idGame: number = 0;
 

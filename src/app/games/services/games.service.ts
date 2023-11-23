@@ -16,6 +16,7 @@ export class GameService {
   public genre: number = 0;
   public paginator: number = 1;
   public idGame: number = 0;
+  public pageSize: number = 20;
 
 
   private apiKey:     string = environment.apiKey;
@@ -24,7 +25,6 @@ export class GameService {
   private serviceUrlDetailsGame: string = 'https://api.rawg.io/api/games/';
 
   constructor( private http:HttpClient ){
-    this.searchGames();
     this.searchGenres();
   }
 
@@ -33,7 +33,7 @@ export class GameService {
     .set('key', this.apiKey)
     .set('page', this.paginator)
     .set('year', '2023')
-    .set('page_size', '20');
+    .set('page_size', this.pageSize);
 
     if (this.genre !== 0) params = params.set('genres', this.genre);
 

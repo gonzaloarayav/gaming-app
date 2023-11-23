@@ -19,18 +19,23 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 })
 export class CategoriesComponent {
 
-  constructor(private gamesService: GameService) {}
+  constructor(private gamesService: GameService) {
+    this.gamesService.searchGames();
+
+  }
 
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+
+  imgLoader: boolean = false;
 
   get games(): Games[] {
     return this.gamesService.gameList;
   }
 
+
   ngAfterViewInit(): void {
    if(this.paginator){
     this.paginator.page.subscribe((event: PageEvent) => {
-      // console.log(event.pageIndex)
       this.gamesService.paginator = event.pageIndex + 1;
       this.gamesService.searchGames();
     })

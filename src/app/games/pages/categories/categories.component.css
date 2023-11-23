@@ -1,0 +1,17 @@
+
+.card-moded{
+  /* background: linear-gradient(to bottom, #673ab7 50%, black 50%); */
+  /* background: linear-gradient(to bottom, #673ab7 50%, rgba(0, 0, 0, 0.5) 50%); */
+  /* background: linear-gradient(to bottom, #000000, #673ab7); */
+  /* color:black; */
+  background: rgba(144, 144, 144, 0.13);
+  /* background-color: #683ab75a; */
+}
+
+.image-hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+}

@@ -1,39 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" [href]="''">
+      <img [src]="'assets/img/logo/logoSinFondo.png'" height="auto" width="35" alt="Logo">
+      <span class="ms-2 text-uppercase fw-bold">MDG</span>
+    </a>
 
-<mat-sidenav-container class="">
-  <mat-toolbar color="primary" >
-    <mat-toolbar-row>
-      <!-- <button mat-icon-button >
-        (click)="sidenav.toggle()"
-        <mat-icon >menu</mat-icon>
-      </button> -->
-      <img src="assets/img/logo/logoSinFondo.png" height="50" width="50" routerLink="p/principal">
-      <span class="menu-spacer"></span>
-      <div class="text-center">
-        <a mat-button *ngFor="let option of listMenu" routerLink="{{option.link}}" class="m-3"> {{option.label}} </a>
-      </div>
-    </mat-toolbar-row>
-
-  </mat-toolbar>
-
-</mat-sidenav-container>
-
-
-<!--
-<mat-sidenav-container>
-
-  <mat-sidenav #sidenav>
-
-    <mat-nav-list>
-
-      <a mat-list-item *ngFor="let option of listMenu" routerLink="{{option.link}}" > {{option.label}} </a>
-      <a mat-list-item (click)="sidenav.toggle()" href="">Close</a>
-
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div style="height: 88vh;">
-
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" *ngFor="let option of listMenu">
+          <a class="nav-link" [href]="option.link">
+            <i class="{{option.icon}} me-1"></i>
+            {{option.label | titlecase}}
+          </a>
+        </li>
+      </ul>
     </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
- -->
+  </div>
+</nav>
+
+
+
+
+
+

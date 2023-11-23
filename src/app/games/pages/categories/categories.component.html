@@ -1,21 +1,32 @@
-<div style="margin-left:50px; margin-right: 50px;">
-  <app-filter-categories></app-filter-categories>
+<div class="container-fluid">
+  <div class="mb-4" >
+    <app-filter-categories></app-filter-categories>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-3" *ngFor="let item of games">
+      <div class="card card-moded" >
+        <div class="mx-4 mt-2">
+          <h2>{{item.name }}</h2>
+        </div>
+        <div class="card-body">
+          <img [src]="item.background_image" routerLink="/game/{{item.id}}" (load)="imgLoader= true" height="180" width="200" class="card-img-top image-hover" [alt]="item.name" #img>
+          <div class="text-center" *ngIf="!imgLoader">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <h3><i class="fa-solid fa-star" style="color:gold"></i> {{item.rating}} / 5</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
-<mat-grid-list cols="4" rowHeight="3:2">
-  <mat-grid-tile *ngFor="let item of games" >
-    <mat-card>
-      <mat-card-title>{{ item.name| slice:0:24 }}{{ item.name.length > 15 ? '...' : '' }}</mat-card-title>
-      <img mat-card-image [src]="item.background_image" height="150" width="250" routerLink="/p/game/{{item.id}}" >
-      <!-- <mat-card-content>{{item.esrb_rating.name}}</mat-card-content> -->
-      <mat-card-footer  style="background-color: black; color:white"> Rating: {{item.rating}} / 5	</mat-card-footer>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+
 <mat-paginator [length]="100"
               [pageSize]="20"
               [pageSizeOptions]="[5, 10, 25, 100]"
               aria-label="Select page">
 </mat-paginator>
-
-
-

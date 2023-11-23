@@ -1,0 +1,26 @@
+/* Agrega estos estilos a tu archivo de estilos CSS */
+
+.img-container {
+  overflow: hidden;
+  border-radius: 10px; /* Ajusta según sea necesario */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+  margin-bottom: 20px; /* Espaciado inferior entre las imágenes */
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta para acortar la imagen sin distorsionar la relación de aspecto */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+h1 {
+  color: #333; /* Color del texto del encabezado */
+}
+
+p {
+  line-height: 1.6; /* Espaciado entre líneas en el párrafo */
+  padding: 15px; /* Relleno interno */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 0; /* Elimina el margen predeterminado del párrafo */
+}
