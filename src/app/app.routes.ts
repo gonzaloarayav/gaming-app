@@ -14,6 +14,7 @@ export const routes: Routes = [
   { path: 'categories', component: CategoriesComponent },
   { path: 'game/:id', component:  GamePageComponent},
   { path: 'about', component:  AboutComponent},
-  { path: '**', component: PrincipalPageComponent}
+  { path: '**', component: PrincipalPageComponent},
+  { path: '', component: PrincipalPageComponent}
 
 ];
