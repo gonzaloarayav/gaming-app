@@ -15,6 +15,5 @@ export const routes: Routes = [
   { path: 'game/:id', component:  GamePageComponent},
   { path: 'about', component:  AboutComponent},
   { path: '**', component: PrincipalPageComponent},
-  { path: '', component: PrincipalPageComponent}
 
 ];

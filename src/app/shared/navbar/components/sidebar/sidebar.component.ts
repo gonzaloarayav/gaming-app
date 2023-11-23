@@ -17,8 +17,8 @@ import { MenuOption } from '../../interfaces/optionMenu.interfaces';
 export class SidebarComponent {
   public listMenu: MenuOption[] = [
     {label: 'Home', link: '', icon: 'fa-solid fa-home'},
-    {label: 'Categorias', link: '/categories', icon:'fa-solid fa-gamepad'},
-    {label: 'Nosotros', link: '/about', icon: 'fa-solid fa-user-group'},
+    {label: 'Categorias', link: 'categories', icon:'fa-solid fa-gamepad'},
+    {label: 'Nosotros', link: 'about', icon: 'fa-solid fa-user-group'},
 
   ];
 
