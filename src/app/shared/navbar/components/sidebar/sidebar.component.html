@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" [href]="''">
+    <a class="navbar-brand" [routerLink]="''">
       <img [src]="'assets/img/logo/logoSinFondo.png'" height="auto" width="35" alt="Logo">
       <span class="ms-2 text-uppercase fw-bold">MDG</span>
     </a>
@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item" *ngFor="let option of listMenu">
-          <a class="nav-link" [href]="option.link">
+          <a class="nav-link" [routerLink]="option.link">
             <i class="{{option.icon}} me-1"></i>
             {{option.label | titlecase}}
           </a>

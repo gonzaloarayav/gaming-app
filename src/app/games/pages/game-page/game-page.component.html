@@ -21,7 +21,7 @@
     <div class="col-md-12">
       <p>{{ gameDetails.description_raw }}</p>
       <p *ngFor="let item of gameDetails.developers">{{item.name}}</p>
-      <a [href]="gameDetails.website" target="_blank">{{ gameDetails.website}}</a>
+      <a [routerLink]="gameDetails.website" target="_blank">{{ gameDetails.website}}</a>
     </div>
   </div>
 </div>

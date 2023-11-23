@@ -4,13 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../../../shared/material.module';
 import { GameService } from '../../../games/services/games.service';
 import { Games } from '../../../games/interfaces/games.interfaces';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'principal-notice',
   standalone: true,
   providers:[GameService],
   imports: [
-    CommonModule, MaterialModule, HttpClientModule
+    CommonModule, MaterialModule, HttpClientModule, RouterLink
   ],
   templateUrl: './principal-notice.component.html',
   styleUrl: './principal-notice.component.css',
